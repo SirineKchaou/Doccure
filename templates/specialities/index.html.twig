@@ -1,0 +1,50 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}Specialities index{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Specialities index</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="{{ path('app_specialities_new') }}">Create new</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Names</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for speciality in specialities %}
+            <tr>
+                <td>{{ speciality.id }}</td>
+                <td>{{ speciality.names }}</td>
+                <td>
+                    <a href="{{ path('app_specialities_show', {'id': speciality.id}) }}">show</a>
+                    <a href="{{ path('app_specialities_edit', {'id': speciality.id}) }}">edit</a>
+                    <a href="{{ path('app_specialities_delete_this', {'id': speciality.id}) }}">delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

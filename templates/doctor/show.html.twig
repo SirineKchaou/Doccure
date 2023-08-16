@@ -1,0 +1,44 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}Doctor{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Doctor</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            {{ include('doctor/_delete_form.html.twig') }}
+        </div>
+        <div class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ doctor.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ doctor.name }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ doctor.photo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_doctor_index') }}">back to list</a>
+
+    <a href="{{ path('app_doctor_edit', {'id': doctor.id}) }}">edit</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

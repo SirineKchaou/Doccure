@@ -1,0 +1,53 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}Doctor index{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Doctor index</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="{{ path('app_doctor_new') }}">Create new</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Photo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for doctor in doctors %}
+            <tr>
+                <td>{{ doctor.id }}</td>
+                <td>{{ doctor.name }}</td>
+                <td>{{ doctor.photo }}</td>
+                <td>
+                    <a href="{{ path('app_doctor_show', {'id': doctor.id}) }}">show</a>
+                    <a href="{{ path('app_doctor_edit', {'id': doctor.id}) }}">edit</a>
+                    <a href="{{ path('app_doctor_delete_this', {'id': doctor.id}) }}">delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

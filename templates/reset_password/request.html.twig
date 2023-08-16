@@ -1,0 +1,35 @@
+
+
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login</title>
+        <link rel="stylesheet" href="{{ asset('css/styleL.css') }}">
+    </head>
+    <body>
+    <div class="container">
+        <div class="login form">
+            <header>Password Reset</header>
+            <form method="post">
+
+    {{ form_start(requestForm) }}
+        {{ form_row(requestForm.email) }}
+        <div>
+            <small>
+                Enter your email address and we will send you a
+                link to reset your password.
+            </small>
+        </div>
+                <input type="submit" class="button" value="Send password reset email">
+    {{ form_end(requestForm) }}
+            </form>
+        </div>
+    </div>
+    </body>
+    </html>
+

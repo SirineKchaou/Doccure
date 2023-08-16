@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+ {% block tag %}
+     <link href="{{ url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap') }}" rel="stylesheet">
+     <link rel="stylesheet" href="{{ url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') }}">
+
+ {% endblock %}
+
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
+    <link href="{{ asset('home.css')}}" rel="stylesheet" />
+    <img src="{{ asset('banner1.jpg') }}" class="img-fluid full-width" >
+    <div class="transform-center z-index-3">
+        <div class="container-fluid custom-container">
+            <div class="row justify-content-center">
+                <div class="align-self-center col-lg-12">
+                    <div>
+                        <h5 >Around the world.</h5>
+                        <h1 >We help all people in need</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

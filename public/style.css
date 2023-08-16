@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+font-family: Arial, sans-serif;
+
+}
+
+a {
+
+    text-decoration: none;
+
+}
+
+li {
+
+    list-style: none;
+
+}
+.navbar {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #041c3b;
+    color: #fff;
+    margin: auto;
+}
+
+.nav-links a {
+
+    color: #fff;
+
+}
+
+/* LOGO */
+
+.logo {
+
+    font-size: 32px;
+
+}
+
+/* NAVBAR MENU */
+
+.menu {
+
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+
+
+}
+
+.menu li:hover {
+
+    background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: 0.3s ease;
+
+}
+
+.menu li {
+
+    padding: 5px 14px;
+
+}
+
+/* DROPDOWN MENU */
+
+.services {
+
+    position: relative;
+
+}
+
+.dropdown {
+
+    background-color: rgb(1, 139, 139);
+    padding: 1em 0;
+    position: absolute; /*WITH RESPECT TO PARENT*/
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+
+}
+
+.dropdown li + li {
+
+    margin-top: 10px;
+
+}
+
+.dropdown li {
+
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+
+}
+
+.dropdown li:hover {
+
+    background-color: #4c9e9e;
+
+}
+
+.services:hover .dropdown {
+
+    display: block;
+
+}
+.full-width {
+    width: 100%;
+
+}
+.img-fluid, .img-thumbnail {
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+}
+.transform-center.z-index-3 {
+    z-index: 3;
+}
+.transform-center {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.overlay-2, .transform-center {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+ :after, :before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+style attribute {
+    cursor: grab;
+}
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+
+:root {
+    --swiper-navigation-size: 44px;
+}
+:root {
+    --swiper-theme-color: #007aff;
+}
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+h5{
+    font-family: sans-serif;
+    color: white;
+    padding: 20px 20px 20px;
+    line-height: 1.15;
+    font-size: 30px;
+    margin: 20px;
+}
+
+h1{
+    font-family: sans-serif;
+    color: white;
+    padding: 20px 20px 20px;
+    margin: 20px;
+    line-height: 1.15;
+    font-size: 60px;
+}
+.header-navbar-rht li a.header-login {
+    background: #fff;
+    border: 2px solid #09e5ab;
+    border-radius: 4px;
+    padding: 10px 15px !important;
+    box-shadow: inset 0 0 0 0 #09e5ab;
+    text-align: center;
+    font-size: 15px;
+    color: #09e5ab;
+    text-transform: uppercase;
+    font-weight: 500;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #0d6efd;
+    text-decoration: none;
+
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}

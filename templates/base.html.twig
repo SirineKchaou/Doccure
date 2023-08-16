@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+        <link href="{{ asset('nav.css')}}" rel="stylesheet" />
+        <link href="{{ asset('footer.css')}}" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    </head>
+    <body>
+    {% block header %}
+        <nav>
+            <ul class="menu">
+                <li class="#"><a href="{{ path('app_home') }}"><img  src="{{ asset('logo.png') }}" ></a></li>
+                <li class="item"><a href="{{ path('app_home') }}">Home</a></li>
+                <li class="item"><a href="{{ path('app_about') }}">About</a></li>
+                <li class="item"><a href="{{ path('app_profile') }}">Doctors</a></li>
+                <li class="item"><a href="{{ path('app_contact') }}">Contact</a></li>
+                </li>
+                <li class=" button"><a href="{{ path('app_login') }}">Log In</a></li>
+                <li class="item button secondary"><a href="{{ path('app_register') }}">Sign Up</a></li>
+                <li class="item button secondary"><a href="{{ path('app_logout') }}">Log out</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+    {% endblock %}
+    {% block body %}
+    {% endblock %}
+    {% block footer %}
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h6>About</h6>
+                        <p class="text-justify">Doccure is a website for booking
+                            <br>appointments with doctors online.</p>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="{{ path('app_about') }}">About Us</a></li>
+                            <li><a href="{{ path('app_contact') }}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <p class="copyright-text"> All Rights Reserved by SDE  </p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    {% endblock %}
+    </body>
+</html>

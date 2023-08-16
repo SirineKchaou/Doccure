@@ -1,0 +1,35 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}New Doctor{% endblock %}
+{% block tag %}
+    <link href="{{ url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') }}">
+
+{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{ asset('signup.css') }}">
+<link rel="stylesheet" href="{{ asset('style.css') }}">
+<section class="ftco-section">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="login-wrap p-4 p-md-5">
+
+                    <h3 class="text-center mb-4">Create new Doctor</h3>
+
+    {{ include('doctor/_form.html.twig') }}
+
+    <a href="{{ path('app_doctor_index') }}">back to list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/popper.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+{% endblock %}

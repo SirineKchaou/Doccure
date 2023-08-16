@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ asset('css/styleL.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="login form">
+        <header>Signup</header>
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+        <input type="submit" class="button" value="Signup">
+    {{ form_end(registrationForm) }}
+        <div class="signup">
+        <span class="signup">Already have an account?
+         <a href="{{ path('app_login') }}">Login</a>
+        </span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
