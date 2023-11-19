@@ -3,6 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Appointment;
+use App\Entity\Doctor;
+use phpDocumentor\Reflection\PseudoTypes\True_;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -20,12 +23,21 @@ class AppointmentType extends AbstractType
             ->add('lastname', TextType::class)
             ->add('firstname', TextType::class)
             ->add('email', EmailType::class)
-            ->add('telephone', TelType::class)
+            ->add('telephone', TelType::class,[
+                'label' => 'Phone',
+            ])
             ->add('date', DateType::class, array(
-                'widget' => 'single_text',
-                'html5' => false,
-                'label' => 'Date d’achat (JJ/MM/AAAA)*',
+                'widget' => 'choice',
+                'input'  => 'datetime_immutable',
+                'html5' => true,
+                'label' => 'Date (JJ/MM/AAAA)*',
             ))
+            ->add('doctor', EntityType::class,[
+                'class'=>Doctor::class,
+                'choice_label'=>'name',
+                'multiple'=>false,
+                'expanded'=>false,
+                ])
         ;
     }
 

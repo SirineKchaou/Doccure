@@ -3,3 +3,9 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+app_doctor_index:
+    path: /doctor/
+    controller: App\Controller\DoctorController::index
+app_appointment:
+    path: /appointment
+    controller: App\Controller\AppointmentController::index

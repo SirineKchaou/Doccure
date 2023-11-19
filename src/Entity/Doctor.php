@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DoctorRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: DoctorRepository::class)]
@@ -21,6 +23,14 @@ class Doctor
 
     #[ORM\ManyToOne(inversedBy: 'doctor')]
     private ?Specialities $specialities = null;
+
+    #[ORM\OneToMany(mappedBy: 'doctor', targetEntity: Appointment::class)]
+    private Collection $doctor;
+
+    public function __construct()
+    {
+        $this->doctor = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +69,36 @@ class Doctor
     public function setSpecialities(?Specialities $specialities): self
     {
         $this->specialities = $specialities;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Appointment>
+     */
+    public function getDoctor(): Collection
+    {
+        return $this->doctor;
+    }
+
+    public function addDoctor(Appointment $doctor): self
+    {
+        if (!$this->doctor->contains($doctor)) {
+            $this->doctor->add($doctor);
+            $doctor->setDoctor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDoctor(Appointment $doctor): self
+    {
+        if ($this->doctor->removeElement($doctor)) {
+            // set the owning side to null (unless already changed)
+            if ($doctor->getDoctor() === $this) {
+                $doctor->setDoctor(null);
+            }
+        }
 
         return $this;
     }

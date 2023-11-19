@@ -19,10 +19,16 @@
                     <div class="login-wrap p-4 p-md-5">
 
                         <h3 class="text-center mb-4">Appointment</h3>
-                        {{ form_start (form) }}
-                        {{ form_widget(form) }}
-                            <button type="submit" class="form-control btn btn-primary rounded submit px-3">{{ button_label|default('Confirm') }}</button>
 
+                        {{ form_start (form) }}
+                        {% set doctor = form.vars.data.doctor %}
+                        {% if doctor is not null %}
+                            {# Display the doctor's name in the form #}
+                            <p>Doctor: {{ doctor.name }}</p>
+                        {% endif %}
+                        {{ form_widget(form) }}
+
+                            <button type="submit" class="form-control btn btn-primary rounded submit px-3">{{ button_label|default('Confirm') }}</button>
                         {{ form_end (form)}}
                     </div>
                 </div>

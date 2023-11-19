@@ -26,8 +26,15 @@ class Appointment
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $telephone = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date = null;
+
+    #[ORM\ManyToOne(inversedBy: 'doctor')]
+    private ?Doctor $doctor = null;
+
+
+
+
 
     public function getId(): ?int
     {
@@ -92,7 +99,19 @@ class Appointment
         $this->date = $date;
 
         return $this;
-
     }
+
+    public function getDoctor(): ?Doctor
+    {
+        return $this->doctor;
+    }
+
+    public function setDoctor(?Doctor $doctor): self
+    {
+        $this->doctor = $doctor;
+
+        return $this;
+    }
+
 
 }

@@ -3,30 +3,27 @@
 {% block title %}Edit Specialities{% endblock %}
 
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('signup.css') }}">
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
-    <section class="ftco-section">
-        <div class="container">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
 
-            <div class="row justify-content-center">
-                <div class="col-md-7 col-lg-5">
-                    <div class="login-wrap p-4 p-md-5">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <div class="page-title-right">
+                            <a href="{{ path('app_specialities_index') }}" class="btn btn-primary waves-effect waves-light">back to list</a>
+                        </div>
 
-                        <h3 class="text-center mb-4">Edit Specialities</h3>
+                        <h4 class="page-title">Edit Specialities</h4>
+
+                    </div>
+                </div>
+            </div>
     {{ include('specialities/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_specialities_index') }}">back to list</a>
 
-    {{ include('specialities/_delete_form.html.twig') }}
-    </div>
-    </div>
-    </div>
-    </div>
+                            </div> <!-- container -->
 
-    </section>
-
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/popper.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+                        </div>
 {% endblock %}

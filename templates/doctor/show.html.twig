@@ -1,21 +1,46 @@
 {% extends 'index.html.twig' %}
 
 {% block title %}Doctor{% endblock %}
-
+{% block link %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,-25" />
+    <link href="{{ asset('libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css1/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="{{ asset('css1/app.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css1/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+{% endblock %}
 {% block body %}
-<div class="container-fluid">
+                <div id="wrapper">
+                    <div class="content-page">
+                        <div class="content">
+                            <!-- Start Content-->
+                            <div class="container-fluid">
+                                <!-- start page title -->
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="page-title-box">
+                                            <div class="page-title-right">
+                                                <a href="{{ path('app_doctor_index') }}" class="btn btn-primary waves-effect waves-light">back to list</a>
+                                            </div>
+                                            <h4 class="page-title">Doctors</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end page title -->
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Doctor</h1>
 
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            {{ include('doctor/_delete_form.html.twig') }}
-        </div>
-        <div class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <div class="table-responsive">
-    <table class="table">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-body">
+
+                                                <div class="table-responsive">
+
+                                                <table class="table" class="table table-centered table-nowrap table-striped" id="dataTable" width="100%" cellspacing="0">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -26,19 +51,58 @@
                 <td>{{ doctor.name }}</td>
             </tr>
             <tr>
+                <th>Speciality</th>
+                <td>{{ doctor.specialities.names }}</td>
+            </tr>
+            <tr>
                 <th>Photo</th>
-                <td>{{ doctor.photo }}</td>
+                <td><img src="{{ asset('uploads/' ~ doctor.photo) }}" alt="Produit Image" width="40px" height="40px"></td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_doctor_index') }}">back to list</a>
+    <a href="{{ path('app_doctor_edit', {'id': doctor.id}) }}" class="btn btn-primary waves-effect waves-light">edit</a>
+                                                </div>
 
-    <a href="{{ path('app_doctor_edit', {'id': doctor.id}) }}">edit</a>
-            </div>
-        </div>
-    </div>
+                                                <ul class="pagination pagination-rounded justify-content-end mb-0">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                                            <span aria-hidden="true">«</span>
+                                                            <span class="visually-hidden">Previous</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript: void(0);">3</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                                            <span aria-hidden="true">»</span>
+                                                            <span class="visually-hidden">Next</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col -->
+                                </div>
+                                <!-- end row -->
+
+                            </div> <!-- container -->
+
+                        </div> <!-- content -->
+
+                        <!-- Footer Start -->
+                        <!-- end Footer -->
+
+                    </div>
+
+                    <!-- ============================================================== -->
+                    <!-- End Page content -->
+                    <!-- ============================================================== -->
+
 
 </div>
-
-{% endblock %}
+                    {% endblock %}

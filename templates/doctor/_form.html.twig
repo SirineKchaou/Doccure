@@ -1,4 +1,26 @@
-{{ form_start(form) }}
+<div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                            {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    <button class="btn btn-primary waves-effect waves-light">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div>
+                </div> <!-- container -->
+
+            </div>
+        </div>
+    </div>
+</div>

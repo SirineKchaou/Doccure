@@ -48,12 +48,8 @@ class LoginbFormAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        // For example:
-        if(in_array('ROLE_ADMIN',  $token->getRoleNames())){
             return new RedirectResponse($this->urlGenerator->generate('app_dashboard'));
-        }else{
-            return new RedirectResponse($this->urlGenerator->generate('app_home'));
-        }
+
 
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }

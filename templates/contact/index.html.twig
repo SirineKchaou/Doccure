@@ -1,16 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block tag %}
+{% block link %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 {% block body %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <section class="ftco-section">
         <div class="container">
-
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-12">
                     <div class="wrapper">
@@ -35,36 +40,34 @@
                             <div class="col-md-5 d-flex align-items-stretch">
                                 <div class="info-wrap bg-primary w-100 p-lg-5 p-4">
                                     <h3 class="mb-4 mt-md-4">Contact us</h3>
-                                    <div class="dbox w-100 d-flex align-items-start">
+                                    <div class="dbox w-100 d-flex align-items-center">
                                         <div class="icon d-flex align-items-center justify-content-center">
-                                            <span class="fa fa-map-marker"></span>
+                                           <span class="material-symbols-outlined">
+call
+</span>
                                         </div>
                                         <div class="text pl-3">
-                                            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                                            <p><span>Phone:</span> <a href="/">+216 26 607 441</a></p>
                                         </div>
                                     </div>
                                     <div class="dbox w-100 d-flex align-items-center">
                                         <div class="icon d-flex align-items-center justify-content-center">
-                                            <span class="fa fa-phone"></span>
+                                            <span class="material-symbols-outlined">
+mail
+</span>
                                         </div>
                                         <div class="text pl-3">
-                                            <p><span>Phone:</span> <a href="/">+ 1235 2355 98</a></p>
+                                            <p><span>Email:</span> <a href="{{ path('app_contact') }}">Doccure@gmail.com</a></p>
                                         </div>
                                     </div>
                                     <div class="dbox w-100 d-flex align-items-center">
                                         <div class="icon d-flex align-items-center justify-content-center">
-                                            <span class="fa fa-paper-plane"><i class="fa-sharp fa-light fa-envelope" style="color: #fcfcfc;"></i></span>
+                                            <span class="material-symbols-outlined">
+language
+</span>
                                         </div>
                                         <div class="text pl-3">
-                                            <p><span>Email:</span> <a href="/">Doccure@gmail.com</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="dbox w-100 d-flex align-items-center">
-                                        <div class="icon d-flex align-items-center justify-content-center">
-                                            <span class="fa fa-globe"></span>
-                                        </div>
-                                        <div class="text pl-3">
-                                            <p><span>Website</span> <a href="#">Doccure.com</a></p>
+                                            <p><span>Website:</span> <a href="{{ path('app_home') }}">Doccure.com</a></p>
                                         </div>
                                     </div>
                                 </div>

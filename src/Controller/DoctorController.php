@@ -23,6 +23,7 @@ class DoctorController extends AbstractController
         ]);
     }
 
+
     #[Route('/new', name: 'app_doctor_new', methods: ['GET', 'POST'])]
     public function new(Request $request, DoctorRepository $doctorRepository, SluggerInterface $slugger): Response
     {
@@ -100,4 +101,5 @@ class DoctorController extends AbstractController
             $doctorRepository->remove($doctor, true);
         return $this->redirectToRoute('app_doctor_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }
