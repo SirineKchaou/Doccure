@@ -9,7 +9,7 @@ backoffice.
 $ composer create-project symfony/symfony-demo my_project
 
 // ...ou vous pouvez cloner le référentiel de code et installer ses dépendances
-$ git clone https://github.com/SirineKchaou/MyPhone.git my_project
+$ git clone https://github.com/SirineKchaou/Doccure.git my_project
 $ cd my_project/
 $ composer install
 ```
