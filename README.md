@@ -1,6 +1,5 @@
 # Doccure
-Site web pour la société Myphone qui présente ses produits disponibles et qui sont gérable via un
-backoffice.
+une plateforme qui permet aux utilisateurs de prendre un rendez-vous chez un médecin en ligne.
 
 # Installation
 [Téléchargez Composer](https://getcomposer.org/) et utilisez le binaire composer installé sur votre ordinateur pour exécuter ces commandes :
